@@ -48,7 +48,7 @@ public class JDFQCoreController {
 		List list = new ArrayList();
 
 		Map map1 = new HashMap();
-		map1.put("name", "Alexia");
+		map1.put("name", "Mr.zhao");
 		map1.put("sex", "female");
 		map1.put("age", "23");
 		list.add(map1);
