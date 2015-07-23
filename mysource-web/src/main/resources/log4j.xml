@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="GBK" ?>
+<!DOCTYPE log4j:configuration SYSTEM "http://jakarta.apache.org/log4j/log4j.dtd">
+<log4j:configuration debug="false" xmlns:log4j='http://jakarta.apache.org/log4j/'>
+
+	<!-- 文件日志输出 -->
+	<appender name="sys" class="org.apache.log4j.RollingFileAppender">
+		<param name="File" value="D:/applogs/mysource-web.log" />
+		<param name="MaxFileSize" value="10240KB" />
+		<param name="MaxBackupIndex" value="40" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[%d][%-5p] - %m - %l%n" />
+		</layout>
+	</appender>
+	
+	<!-- 控制台日志输出 -->
+	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d][%-5p] - %m - %l%n" />
+		</layout>
+	</appender> 
+	
+	<logger name="mysource">
+		<level value="debug" />
+	</logger>
+	
+	<root>
+		<level value="error" />
+		<appender-ref ref="stdout" />
+		<appender-ref ref="sys" />
+	</root>
+
+</log4j:configuration>

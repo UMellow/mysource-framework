@@ -23,5 +23,7 @@
 	
 	<modules>
 		<module>mysource-core</module>
+		<module>mysource-busi</module>
+		<module>mysource-web</module>
 	</modules>
 </project>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+    	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+ 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+	
+	<!--  -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">  
+	    
+	    <!-- 驱动、URL、用户名、密码配置 -->
+	    <property name="driverClassName" value="com.mysql.jdbc.Driver" /> 
+	    
+	    <!--  --> 
+	    <property name="url" value="jdbc:mysql://localhost:3306/jdfqcore?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8" />    
+	    <property name="username" value="root" />    
+	    <property name="password" value="root" /> 
+	    
+	    
+	    <!-- 初始化连接：连接池启动时创建的连接数量 -->
+	    <property name="initialSize" value="0" />
+	    <!-- 最大活动连接：连接池在同一时间内能够分配的最大连接数量 -->
+	    <property name="maxActive" value="10" />
+	    <!-- 最大空闲连接：连接池中允许存在的最大空闲连接数量，超过的空闲连接将被释放 -->
+	    <property name="maxIdle" value="10" />
+	    <!-- 最小空闲连接：连接池允许保持空闲状态的最小连接数量，设置为0表示没有空闲连接时不创建新连接 -->
+	    <property name="minIdle" value="0" />
+	    <!-- 最大等待时间：当没有可用连接时，连接池等待归还连接的最大时间（以毫秒计数） -->
+	    <property name="maxWait" value="60000" />
+	    
+	    <!-- 在连接返回给调用者之前，验证连接 -->
+	    <property name="validationQuery" value="SELECT 1 FROM DUAL" />
+	    <!-- 空闲连接回收器验证连接，如果验证失败，则连接将被从连接池中移除 -->
+	    <property name="testWhileIdle" value="true" />
+	    
+	    <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+		<property name="timeBetweenEvictionRunsMillis" value="60000" />
+		<!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+		<property name="minEvictableIdleTimeMillis" value="25200000" />
+    </bean>
+    
+	
+	<!--  
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName">
+			<value>java:comp/env/jdbc/jdfq_ds</value>
+		</property>
+	</bean>
+	-->
+	
+	<!-- myBatis文件 -->
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<!-- 自动扫描entity目录, 省掉Configuration.xml里的手工配置 -->
+		<property name="mapperLocations" value="classpath*:com/xydtech/*/mapping/*.xml" />
+	</bean>
+	
+	<!-- mybatis spring config 
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="mapperLocations">
+			<list>
+				<value>classpath*:com/xydtech/lns/mapping/*.xml</value>
+			</list>
+		</property>
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	-->
+	
+	<!--  -->
+	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+		<property name="basePackage" value="mysource.**.dao" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
+	</bean>
+	
+	
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">  
+	    <property name="dataSource" ref="dataSource"/>
+	</bean>
+	
+	<!--  
+	<bean id="baseTransactionProxy" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" abstract="true">
+	    <property name="transactionManager" ref="transactionManager" />
+	    <property name="transactionAttributes">
+	        <props>
+	            <prop key="save*">PROPAGATION_REQUIRED, ISOLATION_REPEATABLE_READ, -Exception</prop>
+	            <prop key="*">readOnly</prop>
+	        </props>
+	    </property>
+	</bean>
+	
+	<bean id="theMyBatisCommonDAO" class="com.xyd.base.persistent.MyBatisCommonDAO">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
+	</bean>
+	-->
+</beans>
