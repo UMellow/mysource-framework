@@ -1,16 +1,19 @@
 package mysource.busi.xydtech.lns.controller;
 
 import com.alibaba.fastjson.JSON;
+
 import java.io.IOException;
-import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import mysource.busi.xydtech.lns.service.LoanQueryServiceI;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -40,6 +43,7 @@ public class JDFQCoreController {
 		return "systemmanage/login1";
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@RequestMapping({ "/getData1" })
 	public String getData1(HttpServletRequest req, HttpServletResponse resp)
 			throws Exception {
