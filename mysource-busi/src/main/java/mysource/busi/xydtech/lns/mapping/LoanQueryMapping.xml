@@ -3,7 +3,7 @@
 <mapper namespace="com.xydtech.lns.dao.LoanQueryMapper">
 
 	<select id="selectByAcctno" parameterType="java.lang.String"
-		resultType="com.xydtech.lns.model.Lnsacctinfo">
+		resultType="mysource.busi.xydtech.lns.model.Lnsacctinfo">
 		<![CDATA[
 			SELECT * FROM lnsacctinfo WHERE acctno = #{value}
 		]]>

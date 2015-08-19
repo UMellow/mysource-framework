@@ -61,7 +61,7 @@
 	
 	<!--  -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="mysource.**.dao" />
+		<property name="basePackage" value="mysource.busi.xydtech.lns.dao" />
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
 	

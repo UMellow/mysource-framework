@@ -8,6 +8,6 @@
     http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
 	<!-- 自动扫描，注入service组件 -->
-	<context:component-scan base-package="mysource.**.service" />
+	<context:component-scan base-package="mysource.busi.xydtech.lns.service" />
 	
 </beans>

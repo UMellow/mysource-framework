@@ -13,7 +13,7 @@
     http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
 	<!-- 自动扫描的包名 -->
-	<context:component-scan base-package="mysource.**.controller" />
+	<context:component-scan base-package="mysource.busi.xydtech.lns" />
 
 	<!-- 默认的注解映射支持 -->
 	<mvc:annotation-driven />
