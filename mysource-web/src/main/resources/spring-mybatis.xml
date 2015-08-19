@@ -56,19 +56,8 @@
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<!-- 自动扫描entity目录, 省掉Configuration.xml里的手工配置 -->
-		<property name="mapperLocations" value="classpath*:com/xydtech/*/mapping/*.xml" />
+		<property name="mapperLocations" value="classpath*:mysource/busi/**/mapping/*.xml" />
 	</bean>
-	
-	<!-- mybatis spring config 
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="mapperLocations">
-			<list>
-				<value>classpath*:com/xydtech/lns/mapping/*.xml</value>
-			</list>
-		</property>
-		<property name="dataSource" ref="dataSource" />
-	</bean>
-	-->
 	
 	<!--  -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
@@ -81,19 +70,4 @@
 	    <property name="dataSource" ref="dataSource"/>
 	</bean>
 	
-	<!--  
-	<bean id="baseTransactionProxy" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean" abstract="true">
-	    <property name="transactionManager" ref="transactionManager" />
-	    <property name="transactionAttributes">
-	        <props>
-	            <prop key="save*">PROPAGATION_REQUIRED, ISOLATION_REPEATABLE_READ, -Exception</prop>
-	            <prop key="*">readOnly</prop>
-	        </props>
-	    </property>
-	</bean>
-	
-	<bean id="theMyBatisCommonDAO" class="com.xyd.base.persistent.MyBatisCommonDAO">
-		<property name="sqlSessionFactory" ref="sqlSessionFactory"></property>
-	</bean>
-	-->
 </beans>
