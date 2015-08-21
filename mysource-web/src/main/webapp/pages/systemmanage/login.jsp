@@ -30,6 +30,10 @@
 		width: 100%;
 		padding: 0 20px
 	}
+	
+	li>a:HOVER {
+		color: orange;
+	}
 </style>
 </head>
 
@@ -51,9 +55,7 @@
 			    		<div id="collapseOne" class="panel-collapse collapse in">
 			      			<div class="panel-body">
 			      				<ul class="nav nav-pills nav-stacked">
-									<li id="test1" role="presentation"><a id="btnShow1" href="#">Home</a></li>
-								  	<li role="presentation"><a href="#">Profile</a></li>
-								  	<li role="presentation"><a href="#">Messages</a></li>
+									
 								</ul>
 						    </div>
 			    		</div>
@@ -94,6 +96,30 @@
 
 	<script>
 	
+		$(function(){
+			var liItem = $("#collapseOne ul");
+			
+			var path = '<%=path %>';
+			
+			$.get(path + '/getData1.do', function(data, textStatus){
+				$.each(eval(data), function(index, item){
+					liItem.append("<li><a class='active' href='#' onclick='showmsg()'>" + item.name + "</a></li>");
+				});
+			});
+		});
+		
+		function showmsg() {
+			
+			var path = '<%=path %>';
+
+			alert(path);
+			alert($(this).val());
+			
+    		$(this).parent().prevAll().removeClass("active");
+    		$(this).parent().nextAll().removeClass("active");
+    		$(this).parent().addClass("active");
+		}
+	
 	    function operateFormatter(value, row, index) {
 	        return [
 	            '<a class="like" href="javascript:void(0)" title="Like">',
@@ -107,12 +133,10 @@
 	            '</a>'
 	        ].join('&nbsp;');
 	    }
-
-    
-    	$(function(){
-    		
-    		$(".nav a").bind("click", function(){
-    			
+	    
+	    function showTable(){
+	    	
+			$(".nav a").bind("click", function(){	
 	    		var path = '<%=path %>';
 
 	    		$(this).parent().prevAll().removeClass("active");
@@ -157,7 +181,7 @@
 	                }]
 	        	});
 	    	});
-    	});
+	    }
 	</script>
 </body>
 </html>
