@@ -24,6 +24,7 @@
 		<module>mysource-core</module>
 		<module>mysource-busi</module>
 		<module>mysource-web</module>
-    <module>mysource-thread</module>
+	    <module>mysource-thread</module>
+	    <module>mysource-systemmanage</module>
   </modules>
 </project>
