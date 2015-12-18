@@ -40,7 +40,7 @@ public class JDFQCoreController {
 	public String showLogin(HttpServletRequest req, HttpServletResponse resp)
 			throws Exception {
 		System.out.println("I am into showLogin");
-		return "systemmanage/login1";
+		return "systemmanage/login";
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
