@@ -12,6 +12,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import mysource.busi.aop.SpringAopClass;
 import mysource.busi.xydtech.lns.service.LoanQueryServiceI;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,9 @@ public class JDFQCoreController {
 
 	@Autowired
 	private LoanQueryServiceI loanQueryService;
+	
+	@Autowired
+	private SpringAopClass springAopClass;
 
 	@RequestMapping({ "/sayHello" })
 	public ModelAndView handleRequest(HttpServletRequest req,
@@ -40,6 +44,9 @@ public class JDFQCoreController {
 	public String showLogin(HttpServletRequest req, HttpServletResponse resp)
 			throws Exception {
 		System.out.println("I am into showLogin");
+		
+		springAopClass.helloSpringAop();
+		
 		return "systemmanage/login";
 	}
 

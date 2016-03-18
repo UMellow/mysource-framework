@@ -12,16 +12,15 @@
     http://www.springframework.org/schema/mvc  
     http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
-	<!-- 扫描mysource.systemmanage包及其子包下的Spring组件注解，将其在IOC容器中注册 -->
-	<context:component-scan base-package="mysource.systemmanage" />
+	<!-- 注册Controller组件 -->
+	<context:component-scan base-package="mysource.busi.**.controller" />
 
-	<!-- 默认的注解映射支持 
+	<!-- 默认的注解映射支持 -->
 	<mvc:annotation-driven />
-	-->
-	<!--  
+	
+	<!-- -->
 	<mvc:default-servlet-handler/>
-	-->
-
+	
 	<!-- 视图解释类 -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

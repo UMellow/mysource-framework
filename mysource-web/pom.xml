@@ -22,6 +22,12 @@
 		</dependency>
 		
 		<dependency>
+			<groupId>mysource</groupId>
+			<artifactId>mysource-busi</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		
+		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jsp-api</artifactId>
 			<version>2.0</version>
