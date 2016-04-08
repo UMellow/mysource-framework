@@ -52,7 +52,7 @@ public class JDFQCoreController {
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
 	@RequestMapping({ "/getData1" })
-	public String getData1(HttpServletRequest req, HttpServletResponse resp)
+	public void getData1(HttpServletRequest req, HttpServletResponse resp)
 			throws Exception {
 		System.out.println("I am into getData1");
 
@@ -85,6 +85,6 @@ public class JDFQCoreController {
 		out.flush();
 		out.close();
 
-		return null;
+//		return null;
 	}
 }
