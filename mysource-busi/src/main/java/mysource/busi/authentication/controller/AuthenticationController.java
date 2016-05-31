@@ -60,4 +60,16 @@ public class AuthenticationController {
 		
 		return mv;
 	}
+	
+	@RequestMapping({"/HelloVelocity"})
+	public ModelAndView HelloVelocity(HttpServletRequest req, HttpServletResponse resp) {
+		
+		System.out.println("into HelloVelocity method...");
+		
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("jsonArray", "hello velocity");
+		mv.setViewName("authentication/searchAuthenticationPage");
+		
+		return mv;
+	}
 }
