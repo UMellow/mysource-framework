@@ -1,0 +1,9 @@
+<html DOCTYPE html>
+	<head>
+	</head>
+	<body>
+		<div style="margin: 0 auto; width: 400px; height: 200px; background-color: #EAEAEA;">
+			${user}
+		</div>
+	</body>
+</html>

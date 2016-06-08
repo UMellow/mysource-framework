@@ -15,4 +15,20 @@
 	<context:component-scan base-package="mysource.busi">
 		<context:exclude-filter type="regex" expression="mysource.busi.*.controller"/>
 	</context:component-scan>
+	
+	<!-- spring mail -->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.sina.com"></property>
+		<property name="username" value="v_sunshine@sina.com"></property>
+		<property name="password" value="v_sunshine"></property>
+		<property name="protocol" value="smtp"></property>
+		<property name="defaultEncoding" value="utf-8"></property>
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.from">v_sunshine@sina.com</prop>
+				<prop key="mail.debug">true</prop>
+			</props>
+		</property>
+	</bean>
 </beans>
