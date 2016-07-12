@@ -24,9 +24,11 @@
     <context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
-			classpath:spring.xml<!--,
-			  
-			classpath:spring-mybatis.xml	-->		
+			
+			classpath:spring-dubbo.xml
+				
+			<!-- classpath:spring.xml,		  
+			classpath:spring-mybatis.xml -->		
 		</param-value>
 	</context-param>
 	
@@ -37,21 +39,21 @@
 	</listener>
     
     <!-- springmvc 拦截器配置 -->
-    <servlet>
+    <!-- <servlet>
         <servlet-name>dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-        <!-- springmvc 配置文件 -->
+        springmvc 配置文件
         <init-param>
             <param-name>contextConfigLocation</param-name>
             <param-value>classpath:spring-mvc.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
-    </servlet>
+    </servlet> -->
     
     <!-- springmvc 拦截以.do结尾的请求 -->
-    <servlet-mapping>
+    <!-- <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>/</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping> -->
 	
 </web-app>
