@@ -26,6 +26,5 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/mysource-busi"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/mysource-core"/>
-	<classpathentry kind="lib" path="C:/Users/lenovo/Desktop/ONLINE.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
