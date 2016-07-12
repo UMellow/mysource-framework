@@ -44,7 +44,10 @@ public class MailSenderController {
 		ServletContext servletContext = request.getSession().getServletContext();
 		String realPath = servletContext.getRealPath("/");
 		
-		return realPath;
+//		return realPath;
+		
+		String contentArea = request.getParameter("ckeditor01");
+		return contentArea;
 	}
 	
 	@SuppressWarnings("deprecation")

@@ -15,7 +15,7 @@
 	
 	<dependencies>
 		
-		<dependency>
+		<!-- <dependency>
 			<groupId>mysource</groupId>
 			<artifactId>mysource-systemmanage</artifactId>
 			<version>${project.version}</version>
@@ -25,6 +25,19 @@
 			<groupId>mysource</groupId>
 			<artifactId>mysource-busi</artifactId>
 			<version>${project.version}</version>
+		</dependency> -->
+		
+		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
 		</dependency>
 		
 		<dependency>
@@ -32,6 +45,24 @@
 			<artifactId>jsp-api</artifactId>
 			<version>2.0</version>
 			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>dubbo</artifactId>
+			<version>2.5.3</version>			
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.zookeeper</groupId>
+			<artifactId>zookeeper</artifactId>
+			<version>3.4.6</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.github.sgroschupf</groupId>
+			<artifactId>zkclient</artifactId>
+			<version>0.1</version>
 		</dependency>
 		
 	</dependencies>
