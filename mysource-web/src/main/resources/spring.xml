@@ -12,9 +12,26 @@
 	
 	<!-- 自动扫描，注入Spring组件 -->
 	<!-- 过滤掉 spring-mvc 的 controller 组件 -->
-	<context:component-scan base-package="mysource.busi">
+	<context:component-scan base-package="mysource">
 		<context:exclude-filter type="regex" expression="mysource.busi.*.controller"/>
 	</context:component-scan>
+	
+	<!-- aop配置 -->
+	<aop:config>
+		
+		<!-- 切入点定义，此处为UserServiceImpl类中的所有方法 -->
+		<!-- <aop:pointcut expression="execution(* mysource.demo.spring_aop_xml.UserServiceI.*(..))" id="userPointcut"/> -->
+		
+		<!-- 切面配置，对 UserService 增强处理 -->
+		<!-- <aop:aspect ref="userServiceAspect" id="userServiceAspect">
+			<aop:before method="before" pointcut-ref="userPointcut" />			
+			<aop:around method="around" pointcut-ref="userPointcut" />
+			<aop:after method="after" pointcut-ref="userPointcut" />
+			<aop:after-returning method="afterReturning" pointcut-ref="userPointcut" />
+			<aop:after-throwing method="afterThrowing" pointcut-ref="userPointcut" />
+		</aop:aspect> -->
+		
+	</aop:config>
 	
 	<!-- spring mail -->
 	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">

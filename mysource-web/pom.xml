@@ -19,13 +19,13 @@
 			<groupId>mysource</groupId>
 			<artifactId>mysource-systemmanage</artifactId>
 			<version>${project.version}</version>
-		</dependency>
+		</dependency> -->
 		
 		<dependency>
 			<groupId>mysource</groupId>
 			<artifactId>mysource-busi</artifactId>
 			<version>${project.version}</version>
-		</dependency> -->
+		</dependency>
 		
 		
 		<dependency>
@@ -50,7 +50,13 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>dubbo</artifactId>
-			<version>2.5.3</version>			
+			<version>2.5.3</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>spring</artifactId>
+					<groupId>org.springframework</groupId>
+				</exclusion>
+			</exclusions>			
 		</dependency>
 		
 		<dependency>
