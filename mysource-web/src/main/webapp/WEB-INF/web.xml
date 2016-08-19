@@ -53,5 +53,24 @@
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+    
+    <!-- <listener>
+    	<listener-class>mysource.listener.MyServletContextListener</listener-class>
+    </listener>
+    <listener>
+    	<listener-class>mysource.listener.MyHttpSessionListener</listener-class>
+    </listener>
+    <listener>
+    	<listener-class>mysource.listener.MyServletRequestListener</listener-class>
+    </listener>
+    <listener>
+    	<listener-class>mysource.listener.MyServletContextAttributeListener</listener-class>
+    </listener>
+    <listener>
+    	<listener-class>mysource.listener.MyHttpSessionAttributeListener</listener-class>
+    </listener>
+    <listener>
+    	<listener-class>mysource.listener.MyServletRequestAttributeListener</listener-class>
+    </listener> -->
 	
 </web-app>
