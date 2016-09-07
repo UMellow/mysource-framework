@@ -1,8 +1,8 @@
 package mysource.pattern.creational.abstractfactory;
 
-import mysource.pattern.base.SenderI;
+import mysource.pattern.base.AbstractSender;
 
 public interface SenderProvider {
 
-	public SenderI produceSender();
+	public AbstractSender produceSender();
 }

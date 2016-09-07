@@ -1,7 +1,7 @@
 package mysource.pattern.creational.abstractfactory;
 
+import mysource.pattern.base.AbstractSender;
 import mysource.pattern.base.MailSender;
-import mysource.pattern.base.SenderI;
 
 /**
  * 
@@ -13,7 +13,7 @@ public class MailSenderFactory implements SenderProvider {
 	/**
 	 * @see mysource.pattern.creational.abstractfactory.SenderProvider#produceSender()
 	 */
-	public SenderI produceSender() {
+	public AbstractSender produceSender() {
 		
 		return new MailSender();
 	}

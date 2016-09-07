@@ -1,7 +1,7 @@
 package mysource.pattern.creational.factory;
 
+import mysource.pattern.base.AbstractSender;
 import mysource.pattern.base.MailSender;
-import mysource.pattern.base.SenderI;
 import mysource.pattern.base.SmsSender;
 
 /**
@@ -13,12 +13,12 @@ import mysource.pattern.base.SmsSender;
  */
 public class SenderFactory {
 
-	public static SenderI produceMailSender() {
+	public static AbstractSender produceMailSender() {
 		
 		return new MailSender();
 	}
 	
-	public static SenderI produceSMSSender() {
+	public static AbstractSender produceSMSSender() {
 		
 		return new SmsSender();
 	}

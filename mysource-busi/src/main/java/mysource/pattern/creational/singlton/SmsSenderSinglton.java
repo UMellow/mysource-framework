@@ -1,8 +1,9 @@
 package mysource.pattern.creational.singlton;
 
-import mysource.pattern.base.SenderI;
+import mysource.pattern.base.AbstractSender;
+import mysource.pattern.base.SmsMsg;
 
-public class SmsSenderSinglton implements SenderI {	
+public class SmsSenderSinglton extends AbstractSender {	
 	
 	private SmsSenderSinglton() {
 		
@@ -18,12 +19,10 @@ public class SmsSenderSinglton implements SenderI {
 		private static SmsSenderSinglton instance = new SmsSenderSinglton();
 	}
 	
-	/**
-	 * @see mysource.pattern.base.SenderI#send()
-	 */
-	public void send() {
+	@Override
+	public void sendSms(SmsMsg smsMsg) {
 		
-		System.out.println("send sms with siglton.");
+		super.sendSms(smsMsg);
 	}
 
 	

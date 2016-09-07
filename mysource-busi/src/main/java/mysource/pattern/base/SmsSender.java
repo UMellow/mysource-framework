@@ -1,10 +1,12 @@
 package mysource.pattern.base;
 
-public class SmsSender implements SenderI {
+public class SmsSender extends AbstractSender {
 
-	public void send() {
+	@Override
+	public void sendSms(SmsMsg smsMsg) {
 		
-		System.out.println("send sms...");
+		System.out.println("customer process for sendSms");
+		super.sendSms(smsMsg);
 	}
 
 }

@@ -1,11 +1,11 @@
 package mysource.pattern.creational.abstractfactory;
 
-import mysource.pattern.base.SenderI;
+import mysource.pattern.base.AbstractSender;
 import mysource.pattern.creational.singlton.SmsSenderSinglton;
 
 public class SmsSenderFactorySinglton implements SenderProvider {
 
-	public SenderI produceSender() {
+	public AbstractSender produceSender() {
 		
 		SmsSenderSinglton singlton = SmsSenderSinglton.getInstance();
 		System.out.println(singlton);
