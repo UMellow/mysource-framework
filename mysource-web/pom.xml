@@ -15,12 +15,6 @@
 	
 	<dependencies>
 		
-		<!-- <dependency>
-			<groupId>mysource</groupId>
-			<artifactId>mysource-systemmanage</artifactId>
-			<version>${project.version}</version>
-		</dependency> -->
-		
 		<dependency>
 			<groupId>mysource</groupId>
 			<artifactId>mysource-busi</artifactId>
