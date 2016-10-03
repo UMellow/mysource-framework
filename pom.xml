@@ -27,8 +27,5 @@
 		<module>mysource-web</module>
 		<module>mysource-thread</module>
 		<module>mysource-systemmanage</module>
-		<module>mysource-dubbo-api</module>
-		<module>mysource-dubbo-server</module>
-		<module>mysource-dubbo-client</module>
 	</modules>
 </project>

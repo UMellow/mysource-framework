@@ -18,7 +18,7 @@ private final static String QUEUE_NAME = "bma2sma_order_dev";
 		
 		ConnectionFactory factory = new ConnectionFactory();
 		factory.setHost("10.12.23.103");
-//		factory.setPort(5678);
+		factory.setPort(5672);
 		factory.setUsername("ass");
 		factory.setPassword("ass");
 		
@@ -30,15 +30,15 @@ private final static String QUEUE_NAME = "bma2sma_order_dev";
 		QueueingConsumer consumer = new QueueingConsumer(channel);
 		channel.basicConsume(QUEUE_NAME, false, consumer);
 		
-		QueueingConsumer.Delivery delivery = consumer.nextDelivery();
+		/*QueueingConsumer.Delivery delivery = consumer.nextDelivery();
 		String message = new String(delivery.getBody());
-		System.out.println(" [x] Recv: " + message);
+		System.out.println(" [x] Recv: " + message);*/
 		
-		/*while(true){
+		while(true){
 			QueueingConsumer.Delivery delivery = consumer.nextDelivery();
 			String message = new String(delivery.getBody());
 			System.out.println(" [x] Recv: " + message);
-		}*/
+		}
 	}
 
 }

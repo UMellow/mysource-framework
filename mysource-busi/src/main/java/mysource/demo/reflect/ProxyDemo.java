@@ -9,11 +9,11 @@ import org.apache.commons.lang3.ArrayUtils;
 
 public class ProxyDemo {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InstantiationException, IllegalAccessException {
 		
 		// 创建Collection接口的动态代理类
 		Class<?> clazz = Proxy.getProxyClass(Collection.class.getClassLoader(), Collection.class);
-		
+								
 		System.out.println("-------- 动态代理类名称 --------");
 		System.out.println(clazz.getName());
 		System.out.println();
