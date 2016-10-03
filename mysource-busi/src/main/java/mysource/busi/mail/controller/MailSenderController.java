@@ -13,6 +13,8 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import mysource.busi.xydtech.lns.service.ScopeSingletonBean;
+
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 import org.apache.velocity.app.Velocity;
@@ -36,6 +38,9 @@ public class MailSenderController {
 
 	@Autowired
 	private JavaMailSenderImpl sender;
+	
+	@Autowired
+	private ScopeSingletonBean scopeSingletonBean;
 	
 	@RequestMapping({"/webPath"})
 	@ResponseBody
@@ -112,5 +117,23 @@ public class MailSenderController {
 		/* 发送富文本(velocity模板)内容邮件 - end */
 		
 		return "success";
+	}
+	
+	@RequestMapping({"/scopetest1"})
+	@ResponseBody
+	public String scopeTest1(HttpServletRequest request) {
+		
+		this.scopeSingletonBean.setCounter(2);		
+		
+		return scopeSingletonBean.getCounter().toString();
+	}
+	
+	@RequestMapping({"/scopetest2"})
+	@ResponseBody
+	public String scopeTest2(HttpServletRequest request) {
+		
+		scopeSingletonBean.setCounter(scopeSingletonBean.getCounter() + 1);
+		
+		return scopeSingletonBean.getCounter().toString();
 	}
 }

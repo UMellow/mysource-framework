@@ -2,7 +2,9 @@ package mysource.busi.xydtech.lns.service;
 
 import mysource.busi.xydtech.lns.dao.LoanQueryMapper;
 import mysource.busi.xydtech.lns.model.Lnsacctinfo;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 @Service("loanQueryService")

@@ -27,13 +27,13 @@
 			classpath:spring.xml,			  
 			classpath:spring-mybatis.xml			
 		</param-value>
-	</context-param>
+	</context-param>	
 	
 	<!-- spring 核心监听器 --> 
 	<listener>
 		<description>spring监听器</description>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-	</listener>
+	</listener>	
     
     <!-- springmvc 拦截器配置 -->
     <servlet>
@@ -52,5 +52,9 @@
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+    
+    <!-- <listener>
+		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	</listener> -->
 	
 </web-app>

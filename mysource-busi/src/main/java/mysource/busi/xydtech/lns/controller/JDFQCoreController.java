@@ -14,10 +14,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import mysource.busi.aop.SpringAopClass;
 import mysource.busi.xydtech.lns.service.LoanQueryServiceI;
+import mysource.busi.xydtech.lns.service.ScopeSingletonBean;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -28,6 +30,18 @@ public class JDFQCoreController {
 	
 	@Autowired
 	private SpringAopClass springAopClass;
+	
+	@Autowired
+	private ScopeSingletonBean scopeSingletonBean;
+	
+	@RequestMapping({"/scopetest2"})
+	@ResponseBody
+	public String scopeTest2(HttpServletRequest request) {
+		
+		scopeSingletonBean.setCounter(scopeSingletonBean.getCounter() + 1);
+		
+		return scopeSingletonBean.getCounter().toString();
+	}
 
 	@RequestMapping({ "/sayHello" })
 	public ModelAndView handleRequest(HttpServletRequest req,
