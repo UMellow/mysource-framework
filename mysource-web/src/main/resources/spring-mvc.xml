@@ -14,7 +14,7 @@
 					    http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
 	<!-- 注册Controller组件 -->
-	<context:component-scan base-package="mysource.busi.**.controller" />
+	<context:component-scan base-package="mysource.**.controller" />
 
 	<!-- 默认的注解映射支持 -->
 	<mvc:annotation-driven />
