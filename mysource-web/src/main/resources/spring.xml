@@ -17,7 +17,7 @@
     					http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
 	<!-- 启用 @AspectJ 支持 -->
-	<aop:aspectj-autoproxy />
+	<!-- <aop:aspectj-autoproxy /> -->
 	
 	<!-- 自动扫描，注入Spring组件 -->	
 	<context:component-scan base-package="mysource">
@@ -27,7 +27,7 @@
 	
 	<!-- 缓存配置 -->  
     <!-- 启用缓存注解功能(请将其配置在Spring主配置文件中) --> 
-	<cache:annotation-driven cache-manager="cacheManager" />
+	<!-- <cache:annotation-driven cache-manager="cacheManager" /> -->
 	
 	<!-- Spring自己的基于java.util.concurrent.ConcurrentHashMap实现的缓存管理器(该功能是从Spring3.1开始提供的) -->  
     <!--   
@@ -41,12 +41,12 @@
      -->  
     <!-- 若只想使用Spring自身提供的缓存器,则注释掉下面的两个关于Ehcache配置的bean,并启用上面的SimpleCacheManager即可 -->  
     <!-- Spring提供的基于的Ehcache实现的缓存管理器 -->  
-    <bean id="cacheManagerFactory" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">  
+    <!-- <bean id="cacheManagerFactory" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">  
         <property name="configLocation" value="classpath:ehcache.xml"/>  
     </bean>  
     <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">  
         <property name="cacheManager" ref="cacheManagerFactory"/>  
-    </bean>
+    </bean> -->
 	
 	<!-- aop配置 -->
 	<aop:config>
@@ -66,7 +66,7 @@
 	</aop:config>
 	
 	<!-- spring mail -->
-	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+	<!-- <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="host" value="smtp.sina.com"></property>
 		<property name="username" value="v_sunshine@sina.com"></property>
 		<property name="password" value="v_sunshine"></property>
@@ -79,5 +79,5 @@
 				<prop key="mail.debug">true</prop>
 			</props>
 		</property>
-	</bean>
+	</bean> -->
 </beans>

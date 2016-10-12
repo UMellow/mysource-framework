@@ -15,11 +15,11 @@
 	
 	<dependencies>
 		
-		<dependency>
+		<!-- <dependency>
 			<groupId>mysource</groupId>
 			<artifactId>mysource-busi</artifactId>
 			<version>${project.version}</version>
-		</dependency>
+		</dependency> -->
 		
 		
 		<dependency>
@@ -42,6 +42,18 @@
 		</dependency>
 		
 		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>4.1.6.RELEASE</version>
+		</dependency>
+		
+		<!-- <dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>dubbo</artifactId>
 			<version>2.5.3</version>
@@ -51,9 +63,9 @@
 					<groupId>org.springframework</groupId>
 				</exclusion>
 			</exclusions>			
-		</dependency>
+		</dependency> -->
 		
-		<dependency>
+		<!-- <dependency>
 			<groupId>org.apache.zookeeper</groupId>
 			<artifactId>zookeeper</artifactId>
 			<version>3.4.6</version>
@@ -63,9 +75,9 @@
 			<groupId>com.github.sgroschupf</groupId>
 			<artifactId>zkclient</artifactId>
 			<version>0.1</version>
-		</dependency>
+		</dependency> -->
 		
-		<dependency>
+		<!-- <dependency>
 		    <groupId>net.sf.ehcache</groupId>
 		    <artifactId>ehcache-core</artifactId>
 		    <version>2.6.11</version>
@@ -75,17 +87,33 @@
 		    <groupId>net.sf.ehcache</groupId>
 		    <artifactId>ehcache-web</artifactId>
 		    <version>2.0.4</version>
-		</dependency>
+		</dependency> -->
 		
-		<dependency>
+		<!-- <dependency>
 		    <groupId>com.google.code.simple-spring-memcached</groupId>
 		    <artifactId>spring-cache</artifactId>
 		    <version>3.6.1</version>
-		</dependency>
+		</dependency> -->
+		
+		<!-- <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>4.1.6.RELEASE</version>
+		</dependency> -->
+		
+		<!-- <dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>4.1.6.RELEASE</version>
+		</dependency> -->
 		
 	</dependencies>
 	
-	<build>
-		<finalName>mysource-web</finalName>
-	</build>
+	<!-- 全局配置属性 -->
+	<properties>
+		<!-- 定义war包名称 -->
+		<project.build.name>myweb</project.build.name>
+		<!-- 定义资源文件编码格式 -->
+		<project.build.sourceEncodeing>UTF-8</project.build.sourceEncodeing>
+	</properties>
 </project>

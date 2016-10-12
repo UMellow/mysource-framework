@@ -7,7 +7,7 @@ import java.lang.annotation.Target;
 
 /**
  * 使用 @interface 语法定义注解；
- * 配置参数可使用的数据类型：String、Class、enum；
+ * 配置参数可使用的数据类型：基本数据类型、String、Class、enum；
  * 当注解只有一个配置参数时，该参数的名称默认为value，并且在使用时可以省略；
  * 
  * 元注解说明：
