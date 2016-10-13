@@ -47,7 +47,7 @@
             </div>
 
             <!--logo start-->
-            <a href="index.html" class="logo"><span class="lite">小雨点</span> 科技有限公司</a>
+            <a href="index.html" class="logo"><span class="lite">DWS</span></a>
             <!--logo end-->
 
             <div class="nav search-row" id="top_menu">
