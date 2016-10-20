@@ -9,13 +9,12 @@
  		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
 	
-	<!--  -->
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">  
-	    
+	<!-- 数据库连接池配置 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">  	    
 	    <!-- 驱动、URL、用户名、密码配置 -->
 	    <property name="driverClassName" value="com.mysql.jdbc.Driver" /> 
 	    
-	    <!--  --> 
+	    <!-- 数据库连接 --> 
 	    <property name="url" value="jdbc:mysql://localhost:3306/test?autoReconnect=true&amp;useUnicode=true&amp;characterEncoding=utf8" />    
 	    <property name="username" value="root" />    
 	    <property name="password" value="root" /> 
@@ -52,20 +51,20 @@
 	</bean>
 	-->
 	
-	<!-- myBatis文件 -->
+	<!-- MyBatis SqlSessionFactory -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<!-- 自动扫描entity目录, 省掉Configuration.xml里的手工配置 -->
-		<property name="mapperLocations" value="classpath*:mysource/busi/**/mapping/*.xml" />
+		<!-- 自动扫描 SQLMap 配置文件 -->		
+		<property name="mapperLocations" value="classpath*:mappers/**/*Mapper.xml" />
 	</bean>
 	
-	<!--  -->
+	<!-- 自动扫描注册 Mapper 组件 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="mysource.busi.**.dao" />
+		<property name="basePackage" value="mysource.**.dao" />
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
 	
-	
+	<!-- 事务管理器 -->
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">  
 	    <property name="dataSource" ref="dataSource"/>
 	</bean>
