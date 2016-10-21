@@ -15,8 +15,17 @@
 	<!-- 注册Controller组件 -->
 	<context:component-scan base-package="mysource.**.controller" />
 
-	<!-- 告知Spring，启用注解驱动 -->
+	<!-- 
+		启用注解驱动;
+		使用该配置，不用再配置注解映射器和注解适配器；
+		该配置默认加载很多的参数绑定方法，比如json转换解析器已经加载好了；		
+	-->
 	<mvc:annotation-driven />
+	
+	<!-- 注解的映射器和适配器，使用 mvc:annotation-driven 后无需再显式的进行配置
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
+	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"/>
+	-->
 
 	<!-- 默认的静态文件处理Servlet -->
 	<mvc:default-servlet-handler />
