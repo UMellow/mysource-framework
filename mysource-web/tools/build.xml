@@ -1,0 +1,33 @@
+<?xml version="1.0"  encoding="UTF-8" ?>
+<project default="sysGenerator" basedir=".">
+	<property name="generated.source.dir" value="${basedir}" />
+	<path id="compile.classpath">
+		<fileset dir="${basedir}" includes="mybatis-generator-*-1.3.3-SNAPSHOT.jar" />
+	</path>
+	<target name="sysGenerator">
+		<taskdef name="sysGenerator" classname="org.mybatis.generator.ant.GeneratorAntTask" classpathref="compile.classpath" />
+		<sysGenerator overwrite="false" configfile="sysGenerator.xml" verbose="false">
+			<propertyset>
+				<propertyref name="generated.source.dir" />
+				<propertyref name="driverClass" />
+				<propertyref name="connectionURL" />
+				<propertyref name="userId" />
+				<propertyref name="password" />
+				<propertyref name="javaTargetProject" />
+				<propertyref name="modelTargetPackage" />
+				<propertyref name="resourcesTargetProject" />
+				<propertyref name="resourcesTargetPackage" />
+				<propertyref name="mapperTargetPackage" />
+			</propertyset>
+		</sysGenerator>
+	</target>
+	<property name="driverClass" value="com.mysql.jdbc.Driver" />
+	<property name="connectionURL" value="jdbc:mysql://localhost:3306/mydb?useUnicode=true&amp;characterEncoding=UTF-8" />
+	<property name="userId" value="root" />
+	<property name="password" value="root" />
+	<property name="javaTargetProject" value="../src/main/java" />
+	<property name="modelTargetPackage" value="mysource.system.entity" /> <!-- 需要修改为自己开发的模块包-->
+	<property name="resourcesTargetProject" value="../src/main/resources" />
+	<property name="resourcesTargetPackage" value="mapper.system" />   <!-- 需要修改为自己开发的模块包-->
+	<property name="mapperTargetPackage" value="mysource.system.dao" />   <!-- 需要修改为自己开发的模块包-->
+</project>

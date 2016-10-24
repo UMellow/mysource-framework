@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+	<classPathEntry location="mysql-connector-java-5.1.31.jar" />
+	<context id="sysGenerator" targetRuntime="MyBatis3">
+		<property name="javaFileEncoding" value="UTF-8"/>
+		<plugin type="org.mybatis.generator.plugins.RenameMapperInterfacePlugin">		
+			<property name="searchString" value="Mapper" />
+			<property name="replaceString" value="Dao" />
+		</plugin>
+		<plugin type="org.mybatis.generator.plugins.SerializablePlugin">
+			<property name="addGWTInterface" value="false" />
+			<property name="suppressJavaInterface" value="false" />
+		</plugin>
+
+		<commentGenerator type="org.mybatis.generator.internal.DBColumnCommentGenerator">
+			<property name="suppressAllComments" value="false" />
+		</commentGenerator>
+
+		<jdbcConnection driverClass="${driverClass}" connectionURL="${connectionURL}" userId="${userId}" password="${password}">
+		</jdbcConnection>
+
+		<javaModelGenerator targetPackage="${modelTargetPackage}" targetProject="${javaTargetProject}">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="false" />
+		</javaModelGenerator>
+
+		<sqlMapGenerator targetPackage="${resourcesTargetPackage}" targetProject="${resourcesTargetProject}">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+
+		<javaClientGenerator type="XMLMAPPER" targetPackage="${mapperTargetPackage}" targetProject="${javaTargetProject}">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<!-- tableName:用于自动生成代码的数据库表；domainObjectName:对应于数据库表的javaBean类名 -->
+		<!--  配置相关表映射  -->
+		<table tableName="MAN_AUTHENTICATION" domainObjectName="ManAuthentication" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>				
+		
+	</context>
+</generatorConfiguration>

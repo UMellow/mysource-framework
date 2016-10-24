@@ -13,7 +13,9 @@
 					    http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
 	<!-- 注册Controller组件 -->
-	<context:component-scan base-package="mysource.**.controller" />
+	<context:component-scan base-package="mysource.system.controller" />
+		<!-- <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" /> -->
+	<!-- </context:component-scan> -->
 
 	<!-- 
 		启用注解驱动;

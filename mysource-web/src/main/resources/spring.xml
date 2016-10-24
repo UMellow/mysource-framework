@@ -1,83 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"  
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
-    xmlns:mvc="http://www.springframework.org/schema/mvc"  
-    xmlns:cache="http://www.springframework.org/schema/cache"  
-    xmlns:context="http://www.springframework.org/schema/context" 
-	xmlns:aop="http://www.springframework.org/schema/aop" 
 	xsi:schemaLocation="http://www.springframework.org/schema/beans  
-                        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd  
-                        http://www.springframework.org/schema/mvc  
-                        http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd  
-                        http://www.springframework.org/schema/cache  
-                        http://www.springframework.org/schema/cache/spring-cache-3.2.xsd  
-                        http://www.springframework.org/schema/context  
-                        http://www.springframework.org/schema/context/spring-context-3.2.xsd
-    					http://www.springframework.org/schema/aop 
-    					http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+                        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
 
-	<!-- 启用 @AspectJ 支持 -->
-	<!-- <aop:aspectj-autoproxy /> -->
-	
-	<!-- 自动扫描，注入Spring组件 -->	
-	<context:component-scan base-package="mysource">
-		<!-- 过滤掉 spring-mvc 的 controller 组件 -->
-		<context:exclude-filter type="regex" expression="mysource.busi.*.controller"/>
-	</context:component-scan>
-	
-	<!-- 缓存配置 -->  
-    <!-- 启用缓存注解功能(请将其配置在Spring主配置文件中) --> 
-	<!-- <cache:annotation-driven cache-manager="cacheManager" /> -->
-	
-	<!-- Spring自己的基于java.util.concurrent.ConcurrentHashMap实现的缓存管理器(该功能是从Spring3.1开始提供的) -->  
-    <!--   
-    <bean id="cacheManager" class="org.springframework.cache.support.SimpleCacheManager">  
-        <property name="caches">  
-            <set>  
-                <bean name="myCache" class="org.springframework.cache.concurrent.ConcurrentMapCacheFactoryBean"/>  
-            </set>  
-        </property>  
-    </bean>  
-     -->  
-    <!-- 若只想使用Spring自身提供的缓存器,则注释掉下面的两个关于Ehcache配置的bean,并启用上面的SimpleCacheManager即可 -->  
-    <!-- Spring提供的基于的Ehcache实现的缓存管理器 -->  
-    <!-- <bean id="cacheManagerFactory" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">  
-        <property name="configLocation" value="classpath:ehcache.xml"/>  
-    </bean>  
-    <bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheCacheManager">  
-        <property name="cacheManager" ref="cacheManagerFactory"/>  
-    </bean> -->
-	
-	<!-- aop配置 -->
-	<aop:config>
-		
-		<!-- 切入点定义，此处为UserServiceImpl类中的所有方法 -->
-		<!-- <aop:pointcut expression="execution(* mysource.demo.spring_aop_xml.UserServiceI.*(..))" id="userPointcut"/> -->
-		
-		<!-- 切面配置，对 UserService 增强处理 -->
-		<!-- <aop:aspect ref="userServiceAspect" id="userServiceAspect">
-			<aop:before method="before" pointcut-ref="userPointcut" />			
-			<aop:around method="around" pointcut-ref="userPointcut" />
-			<aop:after method="after" pointcut-ref="userPointcut" />
-			<aop:after-returning method="afterReturning" pointcut-ref="userPointcut" />
-			<aop:after-throwing method="afterThrowing" pointcut-ref="userPointcut" />
-		</aop:aspect> -->
-		
-	</aop:config>
-	
-	<!-- spring mail -->
-	<!-- <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
-		<property name="host" value="smtp.sina.com"></property>
-		<property name="username" value="v_sunshine@sina.com"></property>
-		<property name="password" value="v_sunshine"></property>
-		<property name="protocol" value="smtp"></property>
-		<property name="defaultEncoding" value="utf-8"></property>
-		<property name="javaMailProperties">
-			<props>
-				<prop key="mail.smtp.auth">true</prop>
-				<prop key="mail.smtp.from">v_sunshine@sina.com</prop>
-				<prop key="mail.debug">true</prop>
-			</props>
-		</property>
-	</bean> -->
+	<import resource="classpath*:spring-common.xml" />
+	<import resource="classpath*:spring-mybatis.xml" />
 </beans>

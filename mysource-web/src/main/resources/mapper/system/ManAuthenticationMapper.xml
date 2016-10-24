@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mysource.system.dao.ManAuthenticationDao">
+
+	<!-- Map结果集映射 -->
+	<resultMap id="BaseResultMap" type="mysource.system.entity.ManAuthentication">		
+		<id column="IID" property="iid" jdbcType="BIGINT" />
+		<result column="SLOGINTARGET" property="slogintarget" jdbcType="VARCHAR" />
+		<result column="SPRINCIPAL" property="sprincipal" jdbcType="VARCHAR" />
+		<result column="SCREDENTIAL" property="scredential" jdbcType="VARCHAR" />
+		<result column="SWEBURI" property="sweburi" jdbcType="VARCHAR" />
+		<result column="SCREDTIME" property="scredtime" jdbcType="TIMESTAMP" />
+		<result column="SDESCCRIPTION" property="sdesccription" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<!-- MAN_AUTHENTICATION表全量字段 -->
+	<sql id="Base_Column_List">		
+		IID, SLOGINTARGET, SPRINCIPAL, SCREDENTIAL, SWEBURI, SCREDTIME, SDESCCRIPTION
+	</sql>
+	
+	<!-- 根据主键获取身份凭证信息 -->
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">		
+		select
+			<include refid="Base_Column_List" />
+		from 
+			man_authentication
+		where 
+			IID = #{iid,jdbcType=BIGINT}
+	</select>
+	
+	<!-- 根据主键删除身份凭证信息，逻辑删除，更新标识字段 -->
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">		
+		delete from man_authentication
+		where IID = #{iid,jdbcType=BIGINT}
+	</delete>
+	
+	<!-- 新增身份凭证信息 -->
+	<insert id="insert" parameterType="mysource.system.entity.ManAuthentication">		
+		insert into man_authentication (
+			IID, 
+			SLOGINTARGET, 
+			SPRINCIPAL,
+			SCREDENTIAL, 
+			SWEBURI, 
+			SCREDTIME,
+			SDESCCRIPTION
+		)
+		values (
+			#{iid,jdbcType=BIGINT}, 
+			#{slogintarget,jdbcType=VARCHAR},
+			#{sprincipal,jdbcType=VARCHAR},
+			#{scredential,jdbcType=VARCHAR}, 
+			#{sweburi,jdbcType=VARCHAR}, 
+			#{scredtime,jdbcType=TIMESTAMP},
+			#{sdesccription,jdbcType=VARCHAR}
+		)
+	</insert>
+	
+	<!-- 新增身份凭证信息，使用实体中的非空属性构造SQL -->
+	<insert id="insertSelective" parameterType="mysource.system.entity.ManAuthentication">		
+		insert into man_authentication
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="iid != null">
+				IID,
+			</if>
+			<if test="slogintarget != null">
+				SLOGINTARGET,
+			</if>
+			<if test="sprincipal != null">
+				SPRINCIPAL,
+			</if>
+			<if test="scredential != null">
+				SCREDENTIAL,
+			</if>
+			<if test="sweburi != null">
+				SWEBURI,
+			</if>
+			<if test="scredtime != null">
+				SCREDTIME,
+			</if>
+			<if test="sdesccription != null">
+				SDESCCRIPTION,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="iid != null">
+				#{iid,jdbcType=BIGINT},
+			</if>
+			<if test="slogintarget != null">
+				#{slogintarget,jdbcType=VARCHAR},
+			</if>
+			<if test="sprincipal != null">
+				#{sprincipal,jdbcType=VARCHAR},
+			</if>
+			<if test="scredential != null">
+				#{scredential,jdbcType=VARCHAR},
+			</if>
+			<if test="sweburi != null">
+				#{sweburi,jdbcType=VARCHAR},
+			</if>
+			<if test="scredtime != null">
+				#{scredtime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="sdesccription != null">
+				#{sdesccription,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	
+	<!-- 更新身份凭证信息 -->
+	<update id="updateByPrimaryKeySelective" parameterType="mysource.system.entity.ManAuthentication">		
+		update man_authentication
+		<set>
+			<if test="slogintarget != null">
+				SLOGINTARGET = #{slogintarget,jdbcType=VARCHAR},
+			</if>
+			<if test="sprincipal != null">
+				SPRINCIPAL = #{sprincipal,jdbcType=VARCHAR},
+			</if>
+			<if test="scredential != null">
+				SCREDENTIAL = #{scredential,jdbcType=VARCHAR},
+			</if>
+			<if test="sweburi != null">
+				SWEBURI = #{sweburi,jdbcType=VARCHAR},
+			</if>
+			<if test="scredtime != null">
+				SCREDTIME = #{scredtime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="sdesccription != null">
+				SDESCCRIPTION = #{sdesccription,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where IID = #{iid,jdbcType=BIGINT}
+	</update>
+	
+	<!-- 更新身份凭证信息，使用实体中的非空属性构造SQL -->
+	<update id="updateByPrimaryKey" parameterType="mysource.system.entity.ManAuthentication">		
+		update 
+			man_authentication
+		set 
+			SLOGINTARGET = #{slogintarget,jdbcType=VARCHAR},
+			SPRINCIPAL = #{sprincipal,jdbcType=VARCHAR},
+			SCREDENTIAL = #{scredential,jdbcType=VARCHAR},
+			SWEBURI = #{sweburi,jdbcType=VARCHAR},
+			SCREDTIME = #{scredtime,jdbcType=TIMESTAMP},
+			SDESCCRIPTION = #{sdesccription,jdbcType=VARCHAR}
+		where 
+			IID = #{iid,jdbcType=BIGINT}
+	</update>
+</mapper>
