@@ -20,7 +20,7 @@
 	<!-- <aop:aspectj-autoproxy /> -->
 	
 	<!-- 自动扫描，注入Spring组件 -->	
-	<context:component-scan base-package="mysource">
+	<context:component-scan base-package="mysource" use-default-filters="false">
 		<!-- 过滤掉 spring-mvc 的 controller 组件 -->
 		<context:exclude-filter type="regex" expression="mysource.system.controller"/>
 		<!-- <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" /> -->

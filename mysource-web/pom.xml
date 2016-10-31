@@ -180,4 +180,25 @@
 		<!-- 定义资源文件编码格式 -->
 		<project.build.sourceEncodeing>UTF-8</project.build.sourceEncodeing>
 	</properties>
+	
+	<build>
+		<plugins>
+			<!-- 
+				编译插件
+				source：		源代码编译版本
+				target：		目标平台编译版本
+				encoding：		字符集编码
+			 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
+				</configuration>
+			</plugin>
+			
+		</plugins>
+	</build>
 </project>
