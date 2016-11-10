@@ -5,7 +5,6 @@ import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -18,10 +17,10 @@ public class ManAuthenticationController {
 	
 	private static final Log log = LogFactory.getLog(ManAuthenticationController.class);
 	
-	@RequestMapping(value = "/detail")
-	public ModelAndView detail(){
+	@RequestMapping(value = "/detail/{id}")
+	public ModelAndView detail(@PathVariable int id){
 		
-		log.info("rest 风格的请求，请求参数为");
+		log.info("rest 风格的请求，请求参数为" + id);
 		
 		return null;		
 	}

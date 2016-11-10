@@ -60,7 +60,7 @@
 	
 	<!-- 自动扫描注册 Mapper 组件 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="mysource.**.dao" />
+		<property name="basePackage" value="mysource.*.dao" />
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
 	

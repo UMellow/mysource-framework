@@ -42,7 +42,7 @@
 
 <body>
 	<!--main content start-->
-	<section id="main-content">
+	<section id="main-content" >
 		<section class="wrapper">
 			<div class="row">
 				<div class="col-lg-12">
@@ -529,7 +529,6 @@
 		</section>
 	</section>
 	<!--main content end-->
-	</section>
 	<!-- container section end -->
 	<!-- javascripts -->
 	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
