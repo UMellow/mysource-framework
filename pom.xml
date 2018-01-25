@@ -21,7 +21,7 @@
 	</dependencies>
 
 	<modules>
-		<module>mysource-core</module>
+		<!-- <module>mysource-core</module> -->
 		<!-- <module>mysource-busi</module> -->
 		<module>mysource-web</module>
 		<!-- <module>mysource-thread</module> -->
