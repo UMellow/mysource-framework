@@ -1,0 +1,17 @@
+
+.project
+.settings/org.eclipse.core.resources.prefs
+.settings/org.eclipse.m2e.core.prefs
+mysource-busi/.classpath
+mysource-busi/.settings/org.eclipse.core.resources.prefs
+*.prefs
+mysource-core/.classpath
+mysource-jcore/.classpath
+mysource-systemmanage/.classpath
+mysource-thread/.classpath
+mysource-web/.classpath
+mysource-web/.settings/.jsdtscope
+*.component
+mysource-web/.settings/org.eclipse.wst.common.project.facet.core.xml
+mysource-web/.settings/org.eclipse.wst.jsdt.ui.superType.container
+mysource-web/.settings/org.eclipse.wst.jsdt.ui.superType.name
