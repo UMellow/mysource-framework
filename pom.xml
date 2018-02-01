@@ -27,5 +27,6 @@
 		<!-- <module>mysource-thread</module> -->
 		<!-- <module>mysource-systemmanage</module> -->
     	<module>mysource-jcore</module>
+    <module>AdminLTE-admin</module>
   </modules>
 </project>
