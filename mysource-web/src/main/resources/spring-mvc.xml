@@ -45,11 +45,12 @@
       
 	<bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
 		<property name="templateLoaderPath">
-			<value>/pages/template/</value>
+			<!-- <value>/pages/template/</value> -->
+			<value>/WEB-INF/views/</value>
         </property>
         <property name="freemarkerSettings"><!-- 设置FreeMarker环境属性 -->
              <props>
-                <prop key="template_update_delay">5</prop><!--刷新模板的周期，单位为秒  -->
+                <prop key="template_update_delay">0</prop><!--刷新模板的周期，单位为秒  -->
                 <prop key="default_encoding">UTF-8</prop><!--模板的编码格式  -->
                 <prop key="locale">UTF-8</prop><!--本地化设置  -->
                 <prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
@@ -64,26 +65,32 @@
     </bean>	
 	<!-- FreeMarker 配置 end -->
 	
+	<!-- 资源映射 -->
+	<mvc:resources location="/WEB-INF/static/app/" mapping="/app/**" />
+	<mvc:resources location="/WEB-INF/static/images/" mapping="/images/**" />
+	<mvc:resources location="/WEB-INF/static/plugins/" mapping="/plugins/**" />
+	<mvc:resources location="/upload/" mapping="/upload/**" />	
+	
 
 	<!-- Velocity 视图模板配置 -->
-	<bean id="velocityConfigurer"
+	<!-- <bean id="velocityConfigurer"
 		class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
-		<!-- 設置模板放置位置 -->
+		設置模板放置位置
 		<property name="resourceLoaderPath" value="/pages/" />
 		<property name="velocityProperties">
 			<props>
 				<prop key="directive.foreach.counter.name">loopCounter</prop>
 				<prop key="directive.foreach.counter.initial.value">0</prop>
-				<!-- 指定模板引擎进行模板处理的编码 -->
+				指定模板引擎进行模板处理的编码
 				<prop key="input.encoding">UTF-8</prop>
-				<!-- 指定输出流的编码 -->
+				指定输出流的编码
 				<prop key="output.encoding">UTF-8</prop>
 			</props>
 		</property>
-	</bean>
+	</bean> -->
 
 	<!-- Velocity 视图配置 -->
-	<bean id="viewResolver"
+	<!-- <bean id="viewResolver"
 		class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
 		<property name="suffix" value=".html" />
 		<property name="contentType" value="text/html;charset=UTF-8" />
@@ -92,16 +99,15 @@
 		<property name="numberToolAttribute" value="numberTool" />
 		<property name="exposeRequestAttributes" value="true" />
 		<property name="exposeSessionAttributes" value="true" />
-	</bean>
+	</bean> -->
 
 	<!-- 视图解释类 -->
-	<bean
+	<!-- <bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass"
 			value="org.springframework.web.servlet.view.JstlView" />
 		<property name="prefix" value="/pages/" />
 		<property name="suffix" value=".jsp" />
-	</bean>
+	</bean> -->
 	<!-- <mvc:view-controller path="/" view-name="forward:/index.jsp" /> -->
-
 </beans>
