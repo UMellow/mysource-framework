@@ -36,11 +36,12 @@
 	<!-- FreeMarker 配置 start -->	
 	<bean class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
     	<property name="order" value="1"></property>
-		<property name="suffix" value=".ftl"></property>
+		<property name="suffix" value=".html"></property>
         <property name="contentType" value="text/html;charset=utf-8"></property>
         <property name="viewClass">
             <value>org.springframework.web.servlet.view.freemarker.FreeMarkerView</value>
         </property>
+        <property name="requestContextAttribute" value="request" />
 	</bean>
       
 	<bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">

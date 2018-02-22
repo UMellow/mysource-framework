@@ -1,0 +1,20 @@
+<#macro header>
+<!DOCTYPE html>
+<html>
+<head>
+	<#include "/common/head.html">
+	<#nested>
+</head>
+</#macro>
+
+<#macro body>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+	<#include "/common/header.html">
+	<#include "/common/menu.html">	
+	<#include "/common/footer.html">
+	<#nested>	
+</div>
+</body>
+</#macro>
+</html>

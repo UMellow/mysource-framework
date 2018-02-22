@@ -1,5 +1,7 @@
 package mysource.system.entity;
 
+import java.util.List;
+
 public class Menu {
     private Long id;
 
@@ -18,6 +20,8 @@ public class Menu {
     private String active;
     
     private String checked;
+    
+    private List<Menu> childs;
 
 	public Long getId() {
 		return id;
@@ -89,5 +93,13 @@ public class Menu {
 
 	public void setChecked(String checked) {
 		this.checked = checked;
+	}
+
+	public List<Menu> getChilds() {
+		return childs;
+	}
+
+	public void setChilds(List<Menu> childs) {
+		this.childs = childs;
 	}
 }
