@@ -28,5 +28,6 @@
 		<!-- <module>mysource-systemmanage</module> -->
     	<module>mysource-jcore</module>
     <module>AdminLTE-admin</module>
+    <module>mybatis-sample</module>
   </modules>
 </project>
