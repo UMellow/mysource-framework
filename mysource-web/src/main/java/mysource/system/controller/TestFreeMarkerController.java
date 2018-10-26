@@ -39,10 +39,10 @@ public class TestFreeMarkerController {
 	
 	private List<Menu> getMenus() {
 		
-		List<Menu> menus = new ArrayList<Menu>();
+		List<Menu> menus = new ArrayList<>();
 		
 		Menu menu1 = new Menu();
-		menu1.setName("MySQL监控");
+		menu1.setName("MySQL监控11");
 		
 		Menu menu2 = new Menu();
 		menu2.setName("Redis");
@@ -56,7 +56,7 @@ public class TestFreeMarkerController {
 		Menu child3_2 = new Menu();
 		child3_2.setName("Consumer Group");
 		
-		List<Menu> childs3 = new ArrayList<Menu>();
+		List<Menu> childs3 = new ArrayList<>();
 		childs3.add(child3_1);
 		childs3.add(child3_2);
 		menu3.setChilds(childs3);
